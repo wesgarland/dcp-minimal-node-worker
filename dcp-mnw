@@ -12,8 +12,8 @@ async function main()
 {
   const wallet = require('dcp/wallet');
 
-  var options = { SandboxConstructor: null }
-  var { Worker: StandaloneWorker } = require('dcp-worker/libexec/standaloneWorker');
+  var options = { SandboxConstructor: null };
+  var { Worker: StandaloneWorker } = require('dcp-worker/lib/standaloneWorker'); /* changing /lib/ to /libexec/ soon */
   var identityKeystore, paymentAddress;
 
   try {
