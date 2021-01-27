@@ -1,0 +1,16 @@
+#! /bin/sh -e
+#
+# @file		start-evaluator
+#		Shell script to start the Evaluator (v8 JS engine)
+#		with the startup files in this directory.
+#
+#		Note: Evaluator is always named $DCP_PREFIX/bin/dcp-evaluator
+#
+# @author	Wes Garland, wes@page.ca
+# @date		Jan 2021
+#
+cd `dirname "$0"`
+
+[ "${DCP_PREFIX}" ] && options="--prefix=\"${DCP_PREFIX}\""
+startup=`node -e 'console.log(require.resolve("dcp-worker/dcp-evaluator-start"))'`
+$startup $options
