@@ -10,7 +10,7 @@ It is intended to be used as an example for developers writing their own workers
 * Official worker: https://github.com/Distributed-Compute-Labs/dcp-worker
 * DCP Client: https://www.npmjs.com/package/dcp-client
 
-*Caution:* `Worker` constructor will be changing slightly in the future. See code to stay future-proof.
+*Caution:* `Worker` constructor will be changing slightly in the future. See code to stay future-proof: https://github.com/wesgarland/dcp-minimal-node-worker/blob/develop/dcp-mnw#L39-L41.
 
 If you have any problems, find me or my team on Slack; #dev-connection on https://dcp-devs.slack.com/. 
 
