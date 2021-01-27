@@ -1,13 +1,13 @@
 {
-  "name": "mw",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "dcp-minimal-node-worker",
+  "version": "1.0.1",
+  "description": "Minimal Node Worker for DCP",
+  "main": "dcp-mnw",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "wes@kingsds.network",
+  "license": "MIT",
   "dependencies": {
     "dcp-client": "^3.2.6"
   }

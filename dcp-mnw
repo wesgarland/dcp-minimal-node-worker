@@ -25,7 +25,7 @@ async function main()
   }
 
   if (process.env.MNW_PAYMENT_ADDR) {
-    paymentAddress = new wallet.Address(MNW_PAYMENT_ADDR);
+    paymentAddress = new wallet.Address(process.env.MNW_PAYMENT_ADDR);
   } else {
     try {
       paymentAddress = (await wallet.get()).address;
