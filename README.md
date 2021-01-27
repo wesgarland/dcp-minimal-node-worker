@@ -1,12 +1,14 @@
 # Minimal Node DCP Worker
 
 This is a minimal DCP worker for NodeJS.
+
 It doesn't do anything fancy at all.
+
 It is intended to be used as an example for developers writing their own workers.
 
-Some documentation: https://docs.dcp.dev/module-dcp_worker.html
-Official worker: https://github.com/Distributed-Compute-Labs/dcp-worker
-DCP Client: https://www.npmjs.com/package/dcp-client
+* Some documentation: https://docs.dcp.dev/module-dcp_worker.html
+* Official worker: https://github.com/Distributed-Compute-Labs/dcp-worker
+* DCP Client: https://www.npmjs.com/package/dcp-client
 
 *Caution:* `Worker` constructor will be changing slightly in the future. See code to stay future-proof.
 
@@ -38,4 +40,4 @@ The correct path to `dcp-evaluator-start` can be determined programmatically via
 const thePath = require.resolve("dcp-worker/dcp-evaluator-start")
 ```
 
-See the `start-evaluator` shell script in this repository for a reasonably future-proof way to launch.
+See the `start-evaluator` shell script in this repository for a reasonably future-proof way to launch the Evaluator from your own process manager.
