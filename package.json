@@ -2,12 +2,16 @@
   "name": "dcp-minimal-node-worker",
   "version": "1.0.1",
   "description": "Minimal Node Worker for DCP",
+  "license": "MIT",
+  "author": "wes@kingsds.network",
   "main": "dcp-mnw",
+  "bin": {
+    "dcp-mnw": "dcp-mnw"
+  },
   "scripts": {
+    "start": "node dcp-mnw",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "wes@kingsds.network",
-  "license": "MIT",
   "dependencies": {
     "dcp-client": "^3.2.6"
   }
