@@ -1,18 +1,17 @@
-#! /usr/bin/env node
+#!/usr/bin/env node
 /**
  * @file        mnw             Minimal Node Worker
  * @author      Wes Garland, wes@kingsds.network
  * @date        Jan 2021
  */
+
 const os = require('os');
+
 const scheduler = 'https://scheduler.distributed.computer';
 const autoUpdate = true; /* use dcp-client bundle on scheduler */
 
-async function main()
-{
+async function main() {
   const wallet = require('dcp/wallet');
-
-  var options = { SandboxConstructor: null };
   var { Worker: StandaloneWorker } = require('dcp-worker/lib/standaloneWorker'); /* changing /lib/ to /libexec/ soon */
   var identityKeystore, paymentAddress;
 
@@ -35,12 +34,12 @@ async function main()
     }
   }
   console.log('DCC will be deposited into account', paymentAddress);
-  
+
   const Worker = typeof require('dcp/worker') === 'function'
         ? require('dcp/worker') /* current API - Jan 2021 */
         : require('dcp/worker').Worker /* future API */;
 
-  const worker = new Worker({   
+  const worker = new Worker({
     maxWorkingSandboxes: os.cpus().length * 2 || 3,
     paymentAddress:      paymentAddress,
     sandboxOptions: {
@@ -57,7 +56,7 @@ async function main()
   });
 
   worker.on('payment', (obj) => console.log("DCC credit:", obj.payment));
-  worker.start();
+  await worker.start();
 }
 
 process.on('unhandledRejection', error => {
@@ -65,4 +64,7 @@ process.on('unhandledRejection', error => {
   process.exit(1);
 });
 
-require('dcp-client').init(scheduler, autoUpdate).then(main);
+require('dcp-client')
+  .init(scheduler, autoUpdate)
+  .then(main)
+  .catch(console.error);
